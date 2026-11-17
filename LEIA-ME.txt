@@ -1,0 +1,49 @@
+SC | LEITOR RS 0.6
+
+ATUALIZAR
+Feche o app. Extraia os arquivos desta pasta sobre os arquivos da instalacao anterior.
+Preserve a pasta portable e o arquivo .ready. Abra Iniciar.cmd.
+A area de leitura salva continua funcionando.
+
+PRIMEIRO USO
+1. Abra Iniciar.cmd. Na primeira vez, aguarde a instalacao das dependencias.
+2. Deixe o numero RS visivel no jogo em janela sem bordas.
+3. Clique em Definir area de leitura e arraste somente ao redor dos numeros, sem o icone.
+4. Clique em Iniciar leitura.
+
+A area fica salva automaticamente. Delimite somente uma vez.
+Ajuste novamente apenas se mudar a resolucao ou a posicao do numero na tela.
+Mantenha a janela do leitor fora da area selecionada.
+
+NOVIDADES 0.4
+Numero RS grande; interface compacta redesenhada.
+Nome do mineral na cor da raridade; quantidade em cor neutra.
+Resultados apenas de minerais e salvage, sem ROC ou mineracao manual.
+Botao Definir/Ajustar area de leitura e Iniciar leitura/Pausar.
+Botao de teste removido. Ajuda disponivel no ponto de interrogacao.
+
+COMO INTERPRETAR
+Resultados sao possibilidades conforme a tabela fornecida, nao garantias.
+Codigos desconhecidos continuam visiveis com Sinal nao identificado.
+Sinais sobrepostos podem nao corresponder a um unico mineral.
+Duas leituras iguais confirmam o sinal. Falhas breves de OCR sao toleradas por 2,5 segundos.
+Captura e OCR locais. Nao le memoria nem injeta codigo no jogo.
+
+CONFIGURACAO
+Area: %LOCALAPPDATA%\SC-RS-Overlay\config.json
+Log: %LOCALAPPDATA%\SC-RS-Overlay\app.log
+
+
+VERSAO COMPACTA 0.5
+Janela de 300 x 160. Na versao HUD, somente o fundo tem 60% de transparencia.
+Clique em (...) para abrir os controles. Ao iniciar, os controles se recolhem.
+A primeira configuracao abre com os controles visiveis. A area continua salva.
+
+
+HUD 0.6
+Sem barra de titulo do Windows. Arraste pelo numero ou espaco vazio do painel.
+Clique (...) para abrir controles; x para fechar.
+Fundo com 60% de transparencia e texto iluminado.
+Icone de nave na janela e no atalho.
+Depois de extrair na pasta definitiva, execute CriarAtalho.cmd para criar o atalho na area de trabalho.
+Nao mova a pasta depois de criar o atalho; se mover, execute CriarAtalho.cmd novamente.

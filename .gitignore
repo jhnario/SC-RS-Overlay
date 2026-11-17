@@ -1,0 +1,13 @@
+portable/
+__pycache__/
+*.py[cod]
+.ready
+python-portable.zip
+python-setup.exe
+get-pip.py
+*.log
+.env
+.env.*
+config.json
+preview*.png
+icon.b64
