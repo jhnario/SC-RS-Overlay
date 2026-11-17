@@ -46,32 +46,17 @@ def parse_rs(text):
     value = int(re.sub(r'[., ]', '', text))
     return value if 2000 <= value <= 30000 else None
 
-class StableSignal:
-    def __init__(self):
-        self.last = None
-        self.count = 0
-
-    def feed(self, value):
-        self.count = self.count + 1 if value is not None and value == self.last else 1
-        self.last = value
-        return value if value is not None and self.count >= 2 else None
-
 class DisplaySignal:
-    """Hold a confirmed value across short OCR gaps, never indefinitely."""
+    """Show the first valid OCR value and hold it across brief gaps."""
     def __init__(self, hold_seconds=2.5):
-        self.confirmation = StableSignal()
         self.value = None
         self.last_seen = float('-inf')
         self.hold_seconds = hold_seconds
 
     def feed(self, value, now):
-        # Expire before processing to require fresh confirmation after a long gap.
-        if now - self.last_seen >= self.hold_seconds:
+        if value is not None:
+            self.value = value
+            self.last_seen = now
+        elif now - self.last_seen >= self.hold_seconds:
             self.value = None
-        confirmed = self.confirmation.feed(value)
-        if confirmed is not None:
-            self.value = confirmed
-            self.last_seen = now
-        elif value is not None and value == self.value:
-            self.last_seen = now
         return self.value

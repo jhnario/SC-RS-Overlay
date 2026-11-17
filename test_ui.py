@@ -71,6 +71,13 @@ class UITests(unittest.TestCase):
         self.w.toggle_settings()
         self.assertEqual(self.w.height(),160)
 
+    def test_first_read_updates_overlay(self):
+        self.w.paused=False
+        for value, expected in ((6370,'6.370'),(16960,'16.960')):
+            self.w.send(('reading',self.w.revision,value,time.monotonic()))
+            self.w.poll()
+            self.assertEqual(self.w.number.text(),expected)
+
     def test_gap_hold_and_stale_clear(self):
         self.w.paused=False
         t=time.monotonic()

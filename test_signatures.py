@@ -1,5 +1,5 @@
 import unittest
-from signatures import identify, parse_rs, StableSignal, ORES, TIERS, tier_for, candidates
+from signatures import identify, parse_rs, ORES, TIERS, tier_for, candidates
 
 class SignatureTests(unittest.TestCase):
     def test_screenshot(self):
@@ -11,14 +11,6 @@ class SignatureTests(unittest.TestCase):
     def test_reject_other_hud_values(self):
         for value in ('15.1km','599m','21.20','RS 21200','21,200 6370','','0','100%'):
             self.assertIsNone(parse_rs(value))
-    def test_missing_signal_resets_confirmation(self):
-        s=StableSignal()
-        self.assertIsNone(s.feed(6370))
-        self.assertEqual(s.feed(6370),6370)
-        self.assertIsNone(s.feed(None))
-        self.assertIsNone(s.feed(6370))
-        self.assertIsNone(s.feed(3385))
-        self.assertEqual(s.feed(3385),3385)
     def test_all_values(self):
         self.assertEqual(len(ORES),26)
         for ore,base in ORES:

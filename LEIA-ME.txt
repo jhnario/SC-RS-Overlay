@@ -1,4 +1,4 @@
-SC | LEITOR RS 0.6
+SC | LEITOR RS 1.0.1
 
 ATUALIZAR
 Feche o app. Extraia os arquivos desta pasta sobre os arquivos da instalacao anterior.
@@ -6,7 +6,7 @@ Preserve a pasta portable e o arquivo .ready. Abra Iniciar.cmd.
 A area de leitura salva continua funcionando.
 
 PRIMEIRO USO
-1. Abra Iniciar.cmd. Na primeira vez, aguarde a instalacao das dependencias.
+1. Extraia todo o ZIP para uma pasta no PC. Abra Iniciar.cmd nessa pasta. Na primeira vez, aguarde a instalacao das dependencias.
 2. Deixe o numero RS visivel no jogo em janela sem bordas.
 3. Clique em Definir area de leitura e arraste somente ao redor dos numeros, sem o icone.
 4. Clique em Iniciar leitura.
@@ -26,7 +26,7 @@ COMO INTERPRETAR
 Resultados sao possibilidades conforme a tabela fornecida, nao garantias.
 Codigos desconhecidos continuam visiveis com Sinal nao identificado.
 Sinais sobrepostos podem nao corresponder a um unico mineral.
-Duas leituras iguais confirmam o sinal. Falhas breves de OCR sao toleradas por 2,5 segundos.
+O resultado aparece na primeira leitura valida. Falhas breves de OCR sao toleradas por 2,5 segundos.
 Captura e OCR locais. Nao le memoria nem injeta codigo no jogo.
 
 CONFIGURACAO

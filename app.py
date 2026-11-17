@@ -379,7 +379,7 @@ class Overlay(QWidget):
             'Arraste o painel pelo número ou por uma parte vazia e deixe-a fora da área selecionada.\n\n'
             'Mostra minerais e salvage. As cores indicam a raridade do mineral.\n'
             'Sinais sobrepostos e alterações do jogo podem gerar valores fora da tabela.\n'
-            'Duas leituras iguais confirmam o sinal. Pequenas falhas de OCR são toleradas por 2,5 segundos.\n'
+            'O resultado aparece na primeira leitura valida. Pequenas falhas de OCR são toleradas por 2,5 segundos.\n'
             'Captura local da tela, sem acesso à memória do jogo.')
     def closeEvent(self,event):
         self.stop.set()

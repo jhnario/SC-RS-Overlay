@@ -4,7 +4,7 @@ from signatures import DisplaySignal
 class DisplayTests(unittest.TestCase):
     def test_short_gap_and_expiry(self):
         s=DisplaySignal()
-        self.assertIsNone(s.feed(16960,0))
+        self.assertEqual(s.feed(16960,0),16960)
         self.assertEqual(s.feed(16960,.1),16960)
         self.assertEqual(s.feed(None,.2),16960)
         self.assertEqual(s.feed(None,2),16960)
@@ -15,14 +15,14 @@ class DisplayTests(unittest.TestCase):
         for t in range(1,20):
             self.assertEqual(s.feed(None,t),16960)
             self.assertEqual(s.feed(16960,t+.1),16960)
-    def test_new_number_requires_confirmation(self):
+    def test_new_number_is_shown_on_first_read(self):
         s=DisplaySignal()
-        s.feed(16960,0);s.feed(16960,.1)
-        self.assertEqual(s.feed(6370,.2),16960)
-        self.assertEqual(s.feed(6370,.3),6370)
-    def test_wrong_read_does_not_extend_old_value(self):
+        self.assertEqual(s.feed(16960,0),16960)
+        self.assertEqual(s.feed(6370,.2),6370)
+        self.assertEqual(s.feed(None,.3),6370)
+
+    def test_first_read_after_long_gap(self):
         s=DisplaySignal()
-        s.feed(16960,0);s.feed(16960,.1)
-        self.assertEqual(s.feed(6370,1),16960)
-        self.assertEqual(s.feed(None,1.1),16960)
-        self.assertIsNone(s.feed(6370,2.7))
+        s.feed(16960,0)
+        self.assertIsNone(s.feed(None,3))
+        self.assertEqual(s.feed(3385,4),3385)
