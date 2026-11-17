@@ -18,6 +18,20 @@ Na seção Assets, escolha o arquivo SC-RS-Overlay-main.zip.
 
 Não é necessário instalar Python ou GitHub Desktop previamente.
 
+## Aviso de segurança do Windows
+
+Como o aplicativo não possui assinatura digital, o Windows pode mostrar um aviso ao executá-lo.
+
+Se aparecer “O Windows protegeu o computador”:
+
+1. Confira se você baixou o ZIP deste repositório.
+2. Se confiar na origem, clique em “Mais informações”.
+3. Clique em “Executar assim mesmo”, caso essa opção esteja disponível.
+
+Não desative o antivírus. Se aparecer uma detecção de vírus ou ameaça específica, interrompa a instalação e envie uma captura do aviso para análise.
+
+Lembrete: extraia todo o ZIP antes de abrir Iniciar.cmd.
+
 ## Como usar
 
 1. Abra o Star Citizen e deixe um código numérico RS visível.
